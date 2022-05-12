@@ -4,8 +4,8 @@ import java.util.ArrayList;
 public class School {
     private ArrayList<Teacher> teachers;
     private ArrayList<Student> students;
-    private int totalMoneyEarned;
-    private int totalMoneySpent;
+    private static int totalMoneyEarned;
+    private static int totalMoneySpent;
 
     public School(ArrayList<Teacher> teachers, ArrayList<Student> students) {
         this.teachers = teachers;
@@ -34,7 +34,7 @@ public class School {
         return totalMoneyEarned;
     }
 
-    public void updateTotalMoneyEarned(int amountEarned) {
+    public static void updateTotalMoneyEarned(int amountEarned) {
         totalMoneyEarned += amountEarned;
     }
 
@@ -42,7 +42,7 @@ public class School {
         return totalMoneySpent;
     }
 
-    public void updateTotalMoneySpent(int amountSpent) {
+    public static void updateTotalMoneySpent(int amountSpent) {
         totalMoneySpent += amountSpent;
         totalMoneyEarned -= amountSpent;
     }

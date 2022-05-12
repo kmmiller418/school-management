@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Teacher teach = new Teacher(1, "Teach", 30000);
-        Teacher prof =  new Teacher(2, "Prof", 50000);
+        Teacher teach = new Teacher(1, "Teach", 10000);
+        Teacher prof =  new Teacher(2, "Prof", 15000);
 
         ArrayList<Teacher> teachers = new ArrayList<>();
         teachers.add(teach);
@@ -21,6 +21,23 @@ public class Main {
         students.add(student3);
 
         School test = new School(teachers, students);
+
+        student1.payFees(15000);
+        System.out.println(student1);
+        student2.payFees(20000);
+        System.out.println(student2);
+        student3.payFees(10000);
+        System.out.println(student3);
+
         System.out.println("Test School has earned $" + test.getTotalMoneyEarned());
+
+        teach.receiveSalary(10000);
+        prof.receiveSalary(15000);
+
+        System.out.println(teach);
+        System.out.println(prof);
+
+        System.out.println("Test School has spent $" + test.getTotalMoneySpent());
+        System.out.println("Test School's total profits are $" + test.getTotalMoneyEarned());
     }
 }

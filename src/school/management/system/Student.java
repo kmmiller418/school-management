@@ -39,7 +39,20 @@ public class Student {
         this.grade = grade;
     }
 
-    public void updateFeesPaid(int fees) {
-        this.feesPaid += fees;
+    public void payFees(int fees) {
+        feesPaid += fees;
+        School.updateTotalMoneyEarned(feesPaid);
     }
+
+    public int getRemainingFees() {
+        return feesTotal - feesPaid;
+    }
+
+    @Override
+    public String toString() {
+        return "Student- " + name +
+                " Total fees paid: $" + feesPaid +
+                " Total fees remaining: $ " + getRemainingFees();
+    }
+
 }
